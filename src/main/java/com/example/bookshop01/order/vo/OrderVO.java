@@ -9,6 +9,7 @@ public class OrderVO {
 	private int order_id;
 	private int goods_id;
 	private String goods_title;
+	private int goods_price;
 	private int goods_sales_price;
 	private int total_goods_price;
 	private int cart_goods_qty; //��ٱ��Ͽ� ��� ��ǰ ��
@@ -242,6 +243,12 @@ public class OrderVO {
 	}
 	public void setOrderer_hp(String orderer_hp) {
 		this.orderer_hp = orderer_hp;
+	}
+	public int getGoods_price() {
+		return goods_price;
+	}
+	public void setGoods_price(int goods_price) {
+		this.goods_price = goods_price;
 	}
 	
 	
