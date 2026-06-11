@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="euc-kr"
 	isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -9,6 +8,7 @@
 
 <c:choose>
 <c:when test='${not empty goods.goods_status}'>
+
 <script>
 window.onload=function()
 {
@@ -183,6 +183,8 @@ function fn_modify_goods(goods_id, attribute){
 
 </HEAD>
 <BODY>
+<%@ include file="../../common/layout.jsp" %>
+<%@ include file="../../common/header.jsp" %>
 <form  name="frm_mod_goods"  method=post >
 <DIV class="clear"></DIV>
 	<!-- 내용 들어 가는 곳 -->
