@@ -80,6 +80,7 @@ public class OrderControllerImpl extends BaseController implements OrderControll
 		
 		List<GoodsVO> myGoodsList=(List<GoodsVO>)cartMap.get("myGoodsList");
 		MemberVO memberVO=(MemberVO)session.getAttribute("memberInfo");
+
 		
 		for(int i=0; i<cart_goods_qty.length;i++){
 			String[] cart_goods=cart_goods_qty[i].split(":");
@@ -90,10 +91,12 @@ public class OrderControllerImpl extends BaseController implements OrderControll
 					OrderVO _orderVO=new OrderVO();
 					String goods_title=goodsVO.getGoods_title();
 					int goods_sales_price=goodsVO.getGoods_sales_price();
+					int goods_price=goodsVO.getGoods_price();
 					String goods_fileName=goodsVO.getGoods_fileName();
 					_orderVO.setGoods_id(goods_id);
 					_orderVO.setGoods_title(goods_title);
 					_orderVO.setGoods_sales_price(goods_sales_price);
+					_orderVO.setGoods_price(goods_price);
 					_orderVO.setGoods_fileName(goods_fileName);
 					_orderVO.setOrder_goods_qty(Integer.parseInt(cart_goods[1]));
 					myOrderList.add(_orderVO);
@@ -103,14 +106,16 @@ public class OrderControllerImpl extends BaseController implements OrderControll
 		}
 		session.setAttribute("myOrderList", myOrderList);
 		session.setAttribute("orderer", memberVO);
+		mav.addObject("myOrderList", myOrderList);
+		mav.addObject("orderer", memberVO);
 		return mav;
 	}	
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value="/payToOrderGoods.do" ,method = RequestMethod.POST)
 	public ModelAndView payToOrderGoods(@RequestParam Map<String, String> receiverMap,
 			                       HttpServletRequest request, HttpServletResponse response)  throws Exception{
-		String viewName=(String)request.getAttribute("viewName");
-		ModelAndView mav = new ModelAndView(viewName);
+		
+		ModelAndView mav = new ModelAndView("/order/orderResult");
 		
 		HttpSession session=request.getSession();
 		MemberVO memberVO=(MemberVO)session.getAttribute("orderer");
