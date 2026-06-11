@@ -91,6 +91,7 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 	
 	 if(isLogOn=="false" || isLogOn=='' ){
 		alert("로그인 후 주문이 가능합니다!!!");
+		return;
 	} 
 	
 	
@@ -124,7 +125,7 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 
     document.body.appendChild(formObj); 
     formObj.method="post";
-    formObj.action="${contextPath}/order/orderGoodsForm.do";
+    formObj.action="${contextPath}/order/orderEachGoods.do";
     formObj.submit();
 	}	
 </script>
