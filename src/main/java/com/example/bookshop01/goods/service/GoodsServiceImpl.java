@@ -41,8 +41,8 @@ public class GoodsServiceImpl implements GoodsService{
 	}
 	
 	public List<String> keywordSearch(String keyword) throws Exception {
-		List<String> list=goodsDAO.selectKeywordSearch(keyword);
-		return list;
+		return goodsDAO.selectKeywordSearch(keyword);
+		
 	}
 	
 	public List<GoodsVO> searchGoods(String searchWord) throws Exception{

@@ -78,12 +78,15 @@
 		]]>
 	</select>	
 	
-	<select id="selectKeywordSearch" resultType="String"   parameterType="String"  >
-	    <![CDATA[
-        select goods_title from t_shopping_goods 
-        where         
-        goods_title like '%'|| #{_parameter} || '%'
-        order by goods_creDate desc
+	<select id="selectKeywordSearch" resultType="String" parameterType="String">
+		<![CDATA[
+			select distinct goods_title
+			from t_shopping_goods 
+			where goods_title like '%'|| #{value} || '%'
+			   or goods_writer like '%'|| #{value} || '%'
+			   or goods_publisher like '%'|| #{value} || '%'
+			   or goods_sort like '%'|| #{value} || '%'
+			order by goods_title
 		]]>
 	</select>
 	

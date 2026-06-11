@@ -8,28 +8,52 @@
 
 <script type="text/javascript">
 	var loopSearch=true;
-	function keywordSearch(){
-		if(loopSearch==false)
-			return;
-	 var value=document.frmSearch.searchWord.value;
-		$.ajax({
-			type : "get",
-			async : true, //false인 경우 동기식으로 처리한다.
-			url : "${contextPath}/goods/keywordSearch.do",
-			data : {keyword:value},
-			success : function(data, textStatus) {
-			    var jsonInfo = data;
-				displayResult(jsonInfo);
-			},
-			error : function(data, textStatus) {
-				alert("에러가 발생했습니다."+data);
-			},
-			complete : function(data, textStatus) {
-				//alert("작업을완료 했습니다");
-				
-			}
-		}); //end ajax	
-	}
+	function keywordSearch() {
+    var keyword = $("#searchWord").val();
+
+    if (keyword == null || keyword.trim() === "") {
+        $("#suggestList").empty();
+        $("#suggest").hide();
+        return;
+    }
+
+    $.ajax({
+        type: "get",
+        url: "${pageContext.request.contextPath}/goods/keywordSearch.do",
+        data: { keyword: keyword },
+        dataType: "json",
+       success: function(data) {
+    $("#suggestList").empty();
+
+    if (!data || data.length === 0) {
+        $("#suggest").hide();
+        return;
+    }
+
+    $.each(data, function(index, item) {
+        $("#suggestList").append(
+            "<div class='suggest-item' onclick=\"selectKeyword('" + item + "')\">" 
+            + item + 
+            "</div>"
+        );
+    });
+
+    $("#suggest").show();
+},
+        error: function(xhr, status, error) {
+            console.log("Ajax 검색 오류");
+            console.log("status:", status);
+            console.log("error:", error);
+            console.log("response:", xhr.responseText);
+        }
+    });
+}
+
+function selectKeyword(keyword) {
+    $("#searchWord").val(keyword);
+    $("#suggestList").empty();
+    $("#suggest").hide();
+}
 	
 	function displayResult(jsonInfo){
 		var count = jsonInfo.keyword.length;
@@ -98,7 +122,7 @@
 	<br>
 	<div id="search" >
 		<form name="frmSearch" action="${contextPath}/goods/searchGoods.do" >
-			<input name="searchWord" class="main_input" type="text"  onKeyUp="keywordSearch()"> 
+			<input id="searchWord" name="searchWord" class="main_input" type="text"  onKeyUp="keywordSearch()"> 
 			<input type="submit" name="search" class="btn1"  value="검 색" >
 		</form>
 	</div>
