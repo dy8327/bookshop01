@@ -21,5 +21,6 @@ public interface AdminGoodsDAO {
 	public void deleteGoodsImage(List<ImageFileVO> fileList) throws DataAccessException;
 	public List<OrderVO> selectOrderGoodsList(Map<String, Object> condMap) throws DataAccessException;
 	public void updateOrderGoods(Map<String, Object> orderMap) throws DataAccessException;
+	public void deleteGoods(int goods_id) throws Exception;
 	
 }

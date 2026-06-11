@@ -86,6 +86,12 @@ function  calcPeriod(search_period){
 	//alert(beginDate+","+endDate);
 	return beginDate+","+endDate;
 }
+
+function fn_delete_goods(goods_id) {
+    if (confirm("정말 이 상품을 삭제하시겠습니까?")) {
+        location.href = "${contextPath}/admin/goods/removeGoods.do?goods_id=" + goods_id;
+    }
+}
 </script>
 </head>
 <body>
@@ -202,6 +208,8 @@ function  calcPeriod(search_period){
 				<td>상품가격</td>
 				<td>입고일자</td>
 				<td>출판일</td>
+				<td>수정</td>
+    			<td>삭제</td>
 			</tr>
    <c:choose>
      <c:when test="${empty newGoodsList }">			
@@ -240,6 +248,17 @@ function  calcPeriod(search_period){
 					<strong>
 					   <c:out value="${arr[0]}" />
 					</strong>
+				</td>
+				<td>
+					<input type="button"
+						value="수정"
+						onclick="location.href='${contextPath}/admin/goods/modifyGoodsForm.do?goods_id=${item.goods_id}'">
+				</td>
+
+				<td>
+					<input type="button"
+						value="삭제"
+						onclick="fn_delete_goods(${item.goods_id})">
 				</td>
 				
 			</TR>

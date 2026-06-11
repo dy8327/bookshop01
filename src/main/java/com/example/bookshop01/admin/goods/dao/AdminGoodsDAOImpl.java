@@ -89,6 +89,11 @@ public class AdminGoodsDAOImpl  implements AdminGoodsDAO{
 		}
 		
 	}
+	@Override
+	public void deleteGoods(int goods_id) throws Exception {
+		sqlSession.delete("mapper.admin.goods.deleteGoodsImage", goods_id);
+		sqlSession.delete("mapper.admin.goods.deleteGoods", goods_id);
+}
 
 
 

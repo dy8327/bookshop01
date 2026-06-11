@@ -306,4 +306,14 @@ public class AdminGoodsControllerImpl extends BaseController  implements AdminGo
 		}
 	}
 
+	@RequestMapping(value="/removeGoods.do", method=RequestMethod.GET)
+	public ModelAndView removeGoods(@RequestParam("goods_id") int goods_id,
+									HttpServletRequest request,
+									HttpServletResponse response) throws Exception {
+
+		adminGoodsService.removeGoods(goods_id);
+
+		ModelAndView mav = new ModelAndView("redirect:/admin/goods/adminGoodsMain.do");
+		return mav;
+	}
 }
