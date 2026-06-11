@@ -8,27 +8,24 @@
 <meta charset="utf-8">
 <head>
 <script type="text/javascript">
-  var cnt=0;
-  function fn_addFile(){
-	  if(cnt == 0){
-		  $("#d_file").append("<br>"+"<input  type='file' name='main_image' id='f_main_image' />");	  
-	  }else{
-		  $("#d_file").append("<br>"+"<input  type='file' name='detail_image"+cnt+"' />");
-	  }
-  	
-  	cnt++;
-  }
-  
-  
-  function fn_add_new_goods(obj){
-		 fileName = $('#f_main_image').val();
-		 if(fileName != null && fileName != undefined){
-			 obj.submit();
-		 }else{
-			 alert("메인 이미지는 반드시 첨부해야 합니다.");
-			 return;
-		 }
-		 
+	var cnt = 1;
+
+	function fn_addFile(){
+		$("#d_file").append(
+			"<br><input type='file' name='detail_image" + cnt + "' />"
+		);
+		cnt++;
+	}
+
+	function fn_add_new_goods(obj){
+		var fileName = $('#f_main_image').val();
+
+		if(fileName != null && fileName != undefined && fileName != ""){
+			obj.submit();
+		}else{
+			alert("메인 이미지는 반드시 첨부해야 합니다.");
+			return;
+		}
 	}
 
 	function calcSalesPrice() {
@@ -216,19 +213,24 @@
 			    </table>
 			</div>
 			<div class="tab_content" id="tab7">
-				<h4>상품이미지</h4>
-				<table >
-					<tr>
-						<td align="right">이미지파일 첨부</td>
-			            
-			            <td  align="left"> <input type="button"  value="파일 추가" onClick="fn_addFile()"/></td>
-			            <td>
-				            <div id="d_file">
-				            </div>
-			            </td>
-					</tr>
-				</table>
-			</div>
+			<h4>상품이미지</h4>
+			<table>
+				<tr>
+					<td align="right">메인 이미지</td>
+					<td>
+						<input type="file" name="main_image" id="f_main_image" />
+					</td>
+				</tr>
+
+				<tr>
+					<td align="right">상세 이미지</td>
+					<td>
+						<input type="button" value="파일 추가" onClick="fn_addFile()" />
+						<div id="d_file"></div>
+					</td>
+				</tr>
+			</table>
+		</div>
 		</div>
 	</div>
 	<div class="clear"></div>
