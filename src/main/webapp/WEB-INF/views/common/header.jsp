@@ -18,7 +18,7 @@
 			url : "${contextPath}/goods/keywordSearch.do",
 			data : {keyword:value},
 			success : function(data, textStatus) {
-			    var jsonInfo = JSON.parse(data);
+			    var jsonInfo = data;
 				displayResult(jsonInfo);
 			},
 			error : function(data, textStatus) {
