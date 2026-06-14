@@ -14,7 +14,7 @@
 	<li class="no_line"><a href="#">찾아오시는길</a></li>
 </ul>
 <div class="clear"></div>
-<a href="#"><img width="147px"  height="62px" alt="Booktopia" src="${contextPath}/resources/image/Booktopia_Logo2.jpg" /></a>
+<a href="#"><img width="147px"  height="62px" alt="Booktopia" src="${contextPath}/image/Booktopia_Logo2.jpg" /></a>
 <div style="padding-left:200px">
 	 ㈜북토피아 <br>
 	 대표이사: 이병승   <br>

@@ -43,7 +43,7 @@ function fn_cancel_order(order_id){
 <%@ include file="../common/layout.jsp" %>
 <%@ include file="../common/header.jsp" %>
 <h1>최근주문내역
-    <A href="#"> <IMG  src="${contextPath}/resources/image/btn_more_see.jpg">  </A> 
+    <A href="#"> <IMG  src="${contextPath}/image/btn_more_see.jpg">  </A> 
 </h1>
 <table class="list_view">
 		<tbody align=center >
@@ -131,7 +131,7 @@ function fn_cancel_order(order_id){
 
 <br><br><br>	
 <h1>계좌내역
-    <a href="#"> <img  src="${contextPath}/resources/image/btn_more_see.jpg" />  </a>
+    <a href="#"> <img  src="${contextPath}/image/btn_more_see.jpg" />  </a>
 </h1>
 <table border=0 width=100%  cellpadding=10 cellspacing=10>
   <tr>
@@ -162,7 +162,7 @@ function fn_cancel_order(order_id){
 
 <br><br><br>	
 <h1>나의 정보
-    <a href="#"> <img  src="${contextPath}/resources/image/btn_more_see.jpg" />  </a>
+    <a href="#"> <img  src="${contextPath}/image/btn_more_see.jpg" />  </a>
 </h1>
 <table border=0 width=100% cellpadding=10 cellspacing=10>
   <tr>

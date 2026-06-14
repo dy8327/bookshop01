@@ -24,7 +24,7 @@
 	<section id="new_book">
 		<h3>새로나온 책</h3>
 		<div id="left_scroll">
-			<a href='javascript:slide("left");'><img src="${contextPath}/resources/image/left.gif"></a>
+			<a href='javascript:slide("left");'><img src="${contextPath}/image/left.gif"></a>
 		</div>
 		<div id="carousel_inner">
 			<ul id="carousel_ul">
@@ -81,7 +81,7 @@
 			</ul>
 		</div>
 		<div id="right_scroll">
-			<a href='javascript:slide("right");'><img  src="${contextPath}/resources/image/right.gif"></a>
+			<a href='javascript:slide("right");'><img  src="${contextPath}/image/right.gif"></a>
 		</div>
 		<input id="hidden_auto_slide_seconds" type="hidden" value="0">
 

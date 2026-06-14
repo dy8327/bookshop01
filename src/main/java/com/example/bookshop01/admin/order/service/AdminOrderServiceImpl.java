@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,8 +17,12 @@ import com.example.bookshop01.order.vo.OrderVO;
 @Service("adminOrderService")
 @Transactional(propagation=Propagation.REQUIRED)
 public class AdminOrderServiceImpl implements AdminOrderService {
-	@Autowired
-	private AdminOrderDAO adminOrderDAO;
+	
+	private final AdminOrderDAO adminOrderDAO;
+	
+	public AdminOrderServiceImpl(@Qualifier("adminOrderDAO") AdminOrderDAO adminOrderDAO) {
+		this.adminOrderDAO = adminOrderDAO;
+	}
 	
 	public List<OrderVO>listNewOrder(Map<String, Object> condMap) throws Exception{
 		return adminOrderDAO.selectNewOrderList(condMap);

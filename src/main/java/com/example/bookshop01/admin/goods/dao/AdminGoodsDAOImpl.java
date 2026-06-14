@@ -15,8 +15,13 @@ import com.example.bookshop01.order.vo.OrderVO;
 
 @Repository("adminGoodsDAO")
 public class AdminGoodsDAOImpl  implements AdminGoodsDAO{
+	
+	private final SqlSession sqlSession;
+	
 	@Autowired
-	private SqlSession sqlSession;
+	public AdminGoodsDAOImpl(SqlSession sqlSession) {
+		this.sqlSession = sqlSession;
+	}
 	
 	@Override
 	public int insertNewGoods(Map<String, Object> newGoodsMap) throws DataAccessException {

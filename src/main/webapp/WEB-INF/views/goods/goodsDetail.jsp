@@ -281,7 +281,7 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 		<div id="popup">
 			<!-- 팝업창 닫기 버튼 -->
 			<a href="javascript:" onClick="javascript:imagePopup('close', '.layer01');"> <img
-				src="${contextPath}/resources/image/close.png" id="close" />
+				src="${contextPath}/image/close.png" id="close" />
 			</a> <br /> <font size="12" id="contents">장바구니에 담았습니다.</font><br>
 <form   action='${contextPath}/cart/myCartList.do'  >				
 		<input  type="submit" value="장바구니 보기">

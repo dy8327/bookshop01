@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,8 +18,12 @@ import com.example.bookshop01.order.vo.OrderVO;
 @Service("adminGoodsService")
 @Transactional(propagation=Propagation.REQUIRED)
 public class AdminGoodsServiceImpl implements AdminGoodsService {
-	@Autowired
-	private AdminGoodsDAO adminGoodsDAO;
+	
+	private final AdminGoodsDAO adminGoodsDAO;
+	
+	public AdminGoodsServiceImpl(@Qualifier("adminGoodsDAO") AdminGoodsDAO adminGoodsDAO) {
+		this.adminGoodsDAO = adminGoodsDAO;
+	}
 	@SuppressWarnings("unchecked")
 	@Override
 	public int addNewGoods(Map<String, Object> newGoodsMap) throws Exception{

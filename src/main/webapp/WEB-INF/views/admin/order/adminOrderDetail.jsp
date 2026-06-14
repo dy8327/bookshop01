@@ -291,7 +291,7 @@ function fn_modify_order_state(order_id){
 		<br>
 		<br> 
 		<a href="${contextPath}/main/main.do"> 
-		   <IMG width="75" alt="" src="${contextPath}/resources/image/btn_shoping_continue.jpg">
+		   <IMG width="75" alt="" src="${contextPath}/image/btn_shoping_continue.jpg">
 		</a>
 <div class="clear"></div>		
 	

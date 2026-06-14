@@ -14,9 +14,9 @@
 
 <div id="ad_main_banner">
 	<ul class="bjqs">	 	
-	  <li><img width="775" height="145" src="${contextPath}/resources/image/main_banner01.jpg"></li>
-		<li><img width="775" height="145" src="${contextPath}/resources/image/main_banner02.jpg"></li>
-		<li><img width="775" height="145" src="${contextPath}/resources/image/main_banner03.jpg"></li> 
+	  <li><img width="775" height="145" src="${contextPath}/image/main_banner01.jpg"></li>
+		<li><img width="775" height="145" src="${contextPath}/image/main_banner02.jpg"></li>
+		<li><img width="775" height="145" src="${contextPath}/image/main_banner03.jpg"></li> 
 	</ul>
 </div>
 <div class="main_book">
@@ -26,7 +26,7 @@
 	   <c:set  var="goods_count" value="${goods_count+1 }" />
 		<div class="book">
 			<a href="${contextPath}/goods/goodsDetail.do?goods_id=${item.goods_id }">
-			<img class="link"  src="${contextPath}/resources/image/1px.gif"> 
+			<img class="link"  src="${contextPath}/image/1px.gif"> 
 			</a> 
 				<img width="121" height="154" 
 				     src="${contextPath}/thumbnails.do?goods_id=${item.goods_id}&fileName=${item.goods_fileName}">
@@ -46,7 +46,7 @@
 </div>
 <div class="clear"></div>
 <div id="ad_sub_banner">
-	<img width="770" height="117" src="${contextPath}/resources/image/sub_banner01.jpg">
+	<img width="770" height="117" src="${contextPath}/image/sub_banner01.jpg">
 </div>
 <div class="main_book" >
 <c:set  var="goods_count" value="0" />
@@ -55,7 +55,7 @@
 	   <c:set  var="goods_count" value="${goods_count+1 }" />
 		<div class="book">
 		  <a href="${contextPath}/goods/goodsDetail.do?goods_id=${item.goods_id }">
-	       <img class="link"  src="${contextPath}/resources/image/1px.gif"> 
+	       <img class="link"  src="${contextPath}/image/1px.gif"> 
 	      </a>
 		 <img width="121" height="154" 
 				src="${contextPath}/thumbnails.do?goods_id=${item.goods_id}&fileName=${item.goods_fileName}">
@@ -75,7 +75,7 @@
 
 <div class="clear"></div>
 <div id="ad_sub_banner">
-	<img width="770" height="117" src="${contextPath}/resources/image/sub_banner02.jpg">
+	<img width="770" height="117" src="${contextPath}/image/sub_banner02.jpg">
 </div>
 
 
@@ -86,7 +86,7 @@
 	   <c:set  var="goods_count" value="${goods_count+1 }" />
 		<div class="book">
 		  <a href="${contextPath}/goods/goodsDetail.do?goods_id=${item.goods_id }">
-	       <img class="link"  src="${contextPath}/resources/image/1px.gif"> 
+	       <img class="link"  src="${contextPath}/image/1px.gif"> 
 	      </a>
 		 <img width="121" height="154" 
 				src="${contextPath}/thumbnails.do?goods_id=${item.goods_id}&fileName=${item.goods_fileName}">

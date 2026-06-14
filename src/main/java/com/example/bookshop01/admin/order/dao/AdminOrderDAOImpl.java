@@ -13,8 +13,13 @@ import com.example.bookshop01.order.vo.OrderVO;
 
 @Repository("adminOrderDAO")
 public class AdminOrderDAOImpl  implements AdminOrderDAO{
+	
+	private final SqlSession sqlSession;
+	
 	@Autowired
-	private SqlSession sqlSession;
+	public AdminOrderDAOImpl(SqlSession sqlSession) {
+		this.sqlSession = sqlSession;
+	}
 	
 	public List<OrderVO>selectNewOrderList(Map<String, Object> condMap) throws DataAccessException{
 		return sqlSession.selectList("mapper.admin.order.selectNewOrderList",condMap);

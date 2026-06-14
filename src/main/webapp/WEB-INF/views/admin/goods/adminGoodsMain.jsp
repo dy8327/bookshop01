@@ -146,25 +146,25 @@ function fn_delete_goods(goods_id) {
 					    </c:forEach>	
 					</select>일  &nbsp;이전&nbsp;&nbsp;&nbsp;&nbsp; 
 					<a href="javascript:search_goods_list('today')">
-					   <img   src="${contextPath}/resources/image/btn_search_one_day.jpg">
+					   <img   src="${contextPath}/image/btn_search_one_day.jpg">
 					</a>
 					<a href="javascript:search_goods_list('one_week')">
-					   <img   src="${contextPath}/resources/image/btn_search_1_week.jpg">
+					   <img   src="${contextPath}/image/btn_search_1_week.jpg">
 					</a>
 					<a href="javascript:search_goods_list('two_week')">
-					   <img   src="${contextPath}/resources/image/btn_search_2_week.jpg">
+					   <img   src="${contextPath}/image/btn_search_2_week.jpg">
 					</a>
 					<a href="javascript:search_goods_list('one_month')">
-					   <img   src="${pageContext.request.contextPath}/resources/image/btn_search_1_month.jpg">
+					   <img   src="${pageContext.request.contextPath}/image/btn_search_1_month.jpg">
 					</a>
 					<a href="javascript:search_goods_list('two_month')">
-					   <img   src="${contextPath}/resources/image/btn_search_2_month.jpg">
+					   <img   src="${contextPath}/image/btn_search_2_month.jpg">
 					</a>
 					<a href="javascript:search_goods_list('three_month')">
-					   <img   src="${contextPath}/resources/image/btn_search_3_month.jpg">
+					   <img   src="${contextPath}/image/btn_search_3_month.jpg">
 					</a>
 					<a href="javascript:search_goods_list('four_month')">
-					   <img   src="${contextPath}/resources/image/btn_search_4_month.jpg">
+					   <img   src="${contextPath}/image/btn_search_4_month.jpg">
 					</a>
 					&nbsp;까지 조회
 					</TD>

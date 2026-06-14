@@ -12,8 +12,13 @@ import com.example.bookshop01.goods.vo.ImageFileVO;
 
 @Repository("goodsDAO")
 public class GoodsDAOImpl  implements GoodsDAO{
+	
+	private final SqlSession sqlSession;
+	
 	@Autowired
-	private SqlSession sqlSession;
+	public GoodsDAOImpl(SqlSession sqlSession) {
+		this.sqlSession = sqlSession;
+	}
 
 	@Override
 	public List<GoodsVO> selectGoodsList(String goodsStatus ) throws DataAccessException {

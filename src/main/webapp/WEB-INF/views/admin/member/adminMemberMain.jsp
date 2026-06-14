@@ -271,25 +271,25 @@ function fn_detail_search(){
 					    </c:forEach>	
 					</select>일  &nbsp;이전&nbsp;&nbsp;&nbsp;&nbsp; 
 					<a href="javascript:search_member('today')">
-					   <img   src="${pageContext.request.contextPath}/resources/image/btn_search_one_day.jpg">
+					   <img   src="${pageContext.request.contextPath}/image/btn_search_one_day.jpg">
 					</a>
 					<a href="javascript:search_member('one_week')">
-					   <img   src="${pageContext.request.contextPath}/resources/image/btn_search_1_week.jpg">
+					   <img   src="${pageContext.request.contextPath}/image/btn_search_1_week.jpg">
 					</a>
 					<a href="javascript:search_member('two_week')">
-					   <img   src="${pageContext.request.contextPath}/resources/image/btn_search_2_week.jpg">
+					   <img   src="${pageContext.request.contextPath}/image/btn_search_2_week.jpg">
 					</a>
 					<a href="javascript:search_member('one_month')">
-					   <img   src="${pageContext.request.contextPath}/resources/image/btn_search_1_month.jpg">
+					   <img   src="${pageContext.request.contextPath}/image/btn_search_1_month.jpg">
 					</a>
 					<a href="javascript:search_member('two_month')">
-					   <img   src="${pageContext.request.contextPath}/resources/image/btn_search_2_month.jpg">
+					   <img   src="${pageContext.request.contextPath}/image/btn_search_2_month.jpg">
 					</a>
 					<a href="javascript:search_member('three_month')">
-					   <img   src="${pageContext.request.contextPath}/resources/image/btn_search_3_month.jpg">
+					   <img   src="${pageContext.request.contextPath}/image/btn_search_3_month.jpg">
 					</a>
 					<a href="javascript:search_member('four_month')">
-					   <img   src="${pageContext.request.contextPath}/resources/image/btn_search_4_month.jpg">
+					   <img   src="${pageContext.request.contextPath}/image/btn_search_4_month.jpg">
 					</a>
 					&nbsp;까지 조회
 					</td>

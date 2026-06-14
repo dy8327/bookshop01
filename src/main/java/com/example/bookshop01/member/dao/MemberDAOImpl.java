@@ -12,8 +12,13 @@ import com.example.bookshop01.member.vo.MemberVO;
 
 @Repository("memberDAO")
 public class MemberDAOImpl  implements MemberDAO{
+	
+	private final SqlSession sqlSession;
+	
 	@Autowired
-	private SqlSession sqlSession;	
+	public MemberDAOImpl(SqlSession sqlSession) {
+		this.sqlSession = sqlSession;
+	}	
 	
 	@Override
 	public MemberVO login(Map<String, String> loginMap) throws DataAccessException{

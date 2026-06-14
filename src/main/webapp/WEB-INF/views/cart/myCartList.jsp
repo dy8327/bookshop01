@@ -266,7 +266,7 @@ function fn_order_all_cart_goods() {
 					<td>
 					   <input type="text" name="cart_qty" size=3 value="${cart_goods_qty}"><br>
 						<a href="javascript:modify_cart_qty(${item.goods_id },${item.goods_sales_price},${cnt.count-1 });" >
-						    <img width=25 alt=""  src="${contextPath}/resources/image/btn_modify_qty.jpg">
+						    <img width=25 alt=""  src="${contextPath}/image/btn_modify_qty.jpg">
 						</a>
 					</td>
 					<td>
@@ -276,19 +276,19 @@ function fn_order_all_cart_goods() {
 					</strong> </td>
 					<td>
 					      <a href="javascript:fn_order_each_goods('${item.goods_id }','${item.goods_title }','${item.goods_sales_price}','${item.goods_fileName}', ${cnt.count-1});">
-					       	<img width="75" alt=""  src="${contextPath}/resources/image/btn_order.jpg">
+					       	<img width="75" alt=""  src="${contextPath}/image/btn_order.jpg">
 							</a><br>
 					 	<a href="#"> 
 					 	   <img width="75" alt=""
-							src="${contextPath}/resources/image/btn_order_later.jpg">
+							src="${contextPath}/image/btn_order_later.jpg">
 						</a><br> 
 						<a href="#"> 
 						   <img width="75" alt=""
-							src="${contextPath}/resources/image/btn_add_list.jpg">
+							src="${contextPath}/image/btn_add_list.jpg">
 						</A><br> 
 						<a href="javascript:delete_cart_goods('${cart_id}');""> 
 						   <img width="75" alt=""
-							   src="${contextPath}/resources/image/btn_delete.jpg">
+							   src="${contextPath}/image/btn_delete.jpg">
 					   </a>
 					</td>
 			</tr>
@@ -330,14 +330,14 @@ function fn_order_all_cart_goods() {
 	          <input id="h_totalGoodsPrice"type="hidden" value="${totalGoodsPrice}" />
 	       </td>
 	       <td> 
-	          <img width="25" alt="" src="${contextPath}/resources/image/plus.jpg">  
+	          <img width="25" alt="" src="${contextPath}/image/plus.jpg">  
 	       </td>
 	       <td>
 	         <p id="p_totalDeliveryPrice">${totalDeliveryPrice }원  </p>
 	         <input id="h_totalDeliveryPrice"type="hidden" value="${totalDeliveryPrice}" />
 	       </td>
 	       <td> 
-	         <img width="25" alt="" src="${contextPath}/resources/image/minus.jpg"> 
+	         <img width="25" alt="" src="${contextPath}/image/minus.jpg"> 
 	       </td>
 	       <td>  
 	         <p id="p_totalSalesPrice"> 
@@ -346,7 +346,7 @@ function fn_order_all_cart_goods() {
 	         <input id="h_totalSalesPrice"type="hidden" value="${totalSalesPrice}" />
 	       </td>
 	       <td>  
-	         <img width="25" alt="" src="${contextPath}/resources/image/equal.jpg">
+	         <img width="25" alt="" src="${contextPath}/image/equal.jpg">
 	       </td>
 	       <td>
 	          <p id="p_final_totalPrice">
@@ -361,10 +361,10 @@ function fn_order_all_cart_goods() {
 	<center>
     <br><br>	
 		 <a href="javascript:fn_order_all_cart_goods()">
-		 	<img width="75" alt="" src="${contextPath}/resources/image/btn_order_final.jpg">
+		 	<img width="75" alt="" src="${contextPath}/image/btn_order_final.jpg">
 		 </a>
 		 <a href="#">
-		 	<img width="75" alt="" src="${contextPath}/resources/image/btn_shoping_continue.jpg">
+		 	<img width="75" alt="" src="${contextPath}/image/btn_shoping_continue.jpg">
 		 </a>
 	<center>
 </form>	

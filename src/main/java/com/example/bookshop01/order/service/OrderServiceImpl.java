@@ -3,6 +3,7 @@ package com.example.bookshop01.order.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,8 +15,13 @@ import com.example.bookshop01.order.vo.OrderVO;
 @Service("orderService")
 @Transactional(propagation=Propagation.REQUIRED)
 public class OrderServiceImpl implements OrderService {
+	
+	private final OrderDAO orderDAO;
+	
 	@Autowired
-	private OrderDAO orderDAO;
+	public OrderServiceImpl(@Qualifier("orderDAO") OrderDAO orderDAO) {
+		this.orderDAO = orderDAO;
+	}
 	
 	public List<OrderVO> listMyOrderGoods(OrderVO orderVO) throws Exception{
 		List<OrderVO> orderGoodsList;

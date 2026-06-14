@@ -14,8 +14,13 @@ import com.example.bookshop01.order.vo.OrderVO;
 
 @Repository("myPageDAO")
 public class MyPageDAOImpl implements MyPageDAO{
+	
+	private final SqlSession sqlSession;
+	
 	@Autowired
-	private SqlSession sqlSession;
+	public MyPageDAOImpl(SqlSession sqlSession) {
+		this.sqlSession = sqlSession;
+	}
 	
 	public List<OrderVO> selectMyOrderGoodsList(String member_id) throws DataAccessException{
 		return sqlSession.selectList("mapper.mypage.selectMyOrderGoodsList",member_id);

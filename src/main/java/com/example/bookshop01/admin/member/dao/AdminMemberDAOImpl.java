@@ -10,10 +10,15 @@ import org.springframework.stereotype.Repository;
 
 import com.example.bookshop01.member.vo.MemberVO;
 
-@Repository("adminMemberDao")
+@Repository("adminMemberDAO")
 public class AdminMemberDAOImpl  implements AdminMemberDAO{
+	
+	private final SqlSession sqlSession;
+	
 	@Autowired
-	private SqlSession sqlSession;
+	public AdminMemberDAOImpl(SqlSession sqlSession) {
+		this.sqlSession = sqlSession;
+	}
 	
 	
 	public List<MemberVO> listMember(Map<String, String> condMap) throws DataAccessException{

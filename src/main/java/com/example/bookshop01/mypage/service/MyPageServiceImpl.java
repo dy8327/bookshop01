@@ -3,7 +3,7 @@ package com.example.bookshop01.mypage.service;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,8 +15,12 @@ import com.example.bookshop01.order.vo.OrderVO;
 @Service("myPageService")
 @Transactional(propagation=Propagation.REQUIRED)
 public class MyPageServiceImpl  implements MyPageService{
-	@Autowired
-	private MyPageDAO myPageDAO;
+	
+	private final MyPageDAO myPageDAO;
+	
+	public MyPageServiceImpl(@Qualifier("myPageDAO") MyPageDAO myPageDAO) {
+		this.myPageDAO = myPageDAO;
+	}
 
 	public List<OrderVO> listMyOrderGoods(String member_id) throws Exception{
 		return myPageDAO.selectMyOrderGoodsList(member_id);

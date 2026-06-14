@@ -12,8 +12,13 @@ import com.example.bookshop01.goods.vo.GoodsVO;
 
 @Repository("cartDAO")
 public class CartDAOImpl  implements  CartDAO{
+	
+	private final SqlSession sqlSession;
+	
 	@Autowired
-	private SqlSession sqlSession;
+	public CartDAOImpl(SqlSession sqlSession) {
+		this.sqlSession = sqlSession;
+	}
 	
 	public List<CartVO> selectCartList(CartVO cartVO) throws DataAccessException {
 		return sqlSession.selectList("mapper.cart.selectCartList",cartVO);
