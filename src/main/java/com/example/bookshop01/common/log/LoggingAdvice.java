@@ -18,8 +18,8 @@ public class LoggingAdvice {
 	private static final Logger logger = LoggerFactory.getLogger(LoggingAdvice.class);
 
 	// target �޼����� �Ķ���͵� ������ ����մϴ�.
-	@Before("execution(* com.bookshop01.*.service.*.*(..)) or "
-			+ "execution(* com.bookshop01.*.dao.*.*(..))")
+	@Before("execution(* com.example.bookshop01..service.*.*(..)) or "
+			+ "execution(* com.example.bookshop01..dao.*.*(..))")
 	public void startLog(JoinPoint jp) {
 
 		logger.info("-------------------------------------");
@@ -42,8 +42,8 @@ public class LoggingAdvice {
 
 	}
 	
-	@After("execution(* com.bookshop01.*.service.*.*(..)) or "
-			+ "execution(* com.bookshop01.*.*.dao.*.*(..))")
+	@After("execution(* com.example.bookshop01..service.*.*(..)) or "
+			+ "execution(* com.example.bookshop01..dao.*.*(..))")
 	public void after(JoinPoint jp) { 
 		logger.info("-------------------------------------");
 		logger.info("-------------------------------------");
@@ -67,8 +67,8 @@ public class LoggingAdvice {
 
 
 	// target �޼ҵ��� ���� �ð��� �����մϴ�.
-	@Around("execution(* com.bookshop01.*.service.*.*(..)) or "
-			+ "execution(* com.bookshop01.*.dao.*.*(..))")
+	@Around("execution(* com.example.bookshop01..service.*.*(..)) or "
+			+ "execution(* com.example.bookshop01..dao.*.*(..))")
 	public Object timeLog(ProceedingJoinPoint pjp) throws Throwable {
 		long startTime = System.currentTimeMillis();
 		logger.info(Arrays.toString(pjp.getArgs()));

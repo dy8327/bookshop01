@@ -10,7 +10,11 @@
 <%@ include file="../common/layout.jsp" %>
 <%@ include file="../common/header.jsp" %>
 <%@ include file="../common/quickMenu.jsp" %>
+<div id="main_page_frame">
+<div id="main_left_column">
 <%@ include file="../common/side.jsp" %>
+</div>
+<div id="main_content_column">
 
 <div id="ad_main_banner">
 	<ul class="bjqs">	 	
@@ -100,9 +104,13 @@
      <div class="book">
        <font size=20> <a href="#">more</a></font>
      </div>
-   </c:if>
+	</c:if>
 	</c:forEach>
-	<%@ include file="../common/footer.jsp" %>
+</div>
+</div>
+</div>
+<div id="main_footer">
+<%@ include file="../common/footer.jsp" %>
 </div>
 
    

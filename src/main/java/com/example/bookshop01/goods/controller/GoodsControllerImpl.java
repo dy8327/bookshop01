@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,8 +25,11 @@ import jakarta.servlet.http.HttpSession;
 @Controller("goodsController")
 @RequestMapping(value="/goods")
 public class GoodsControllerImpl extends BaseController   implements GoodsController {
-	@Autowired
-	private GoodsService goodsService;
+	private final GoodsService goodsService;
+
+	GoodsControllerImpl(GoodsService goodsService) {
+		this.goodsService = goodsService;
+	}
 	
 	@RequestMapping(value="/goodsDetail.do" ,method = RequestMethod.GET)
 	public ModelAndView goodsDetail(@RequestParam("goods_id") String goods_id,

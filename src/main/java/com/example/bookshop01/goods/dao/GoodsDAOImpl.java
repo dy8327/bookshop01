@@ -3,7 +3,6 @@ package com.example.bookshop01.goods.dao;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
@@ -15,7 +14,6 @@ public class GoodsDAOImpl  implements GoodsDAO{
 	
 	private final SqlSession sqlSession;
 	
-	@Autowired
 	public GoodsDAOImpl(SqlSession sqlSession) {
 		this.sqlSession = sqlSession;
 	}

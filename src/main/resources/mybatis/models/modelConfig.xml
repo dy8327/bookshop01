@@ -4,12 +4,12 @@
 
 <configuration>
   <typeAliases>
-    <typeAlias type="com.bookshop01.goods.vo.GoodsVO" alias="goodsVO" />
-    <typeAlias type="com.bookshop01.goods.vo.ImageFileVO" alias="imageFileVO" />
-    <typeAlias type="com.bookshop01.member.vo.MemberVO" alias="memberVO" />
-    <typeAlias type="com.bookshop01.cart.vo.CartVO" alias="cartVO" />
-    <typeAlias type="com.bookshop01.order.vo.OrderVO" alias="orderVO" />
-    <typeAlias type="com.bookshop01.mypage.vo.MyPageVO" alias="mypageVO" />
+    <typeAlias type="com.example.bookshop01.goods.vo.GoodsVO" alias="goodsVO" />
+    <typeAlias type="com.example.bookshop01.goods.vo.ImageFileVO" alias="imageFileVO" />
+    <typeAlias type="com.example.bookshop01.member.vo.MemberVO" alias="memberVO" />
+    <typeAlias type="com.example.bookshop01.cart.vo.CartVO" alias="cartVO" />
+    <typeAlias type="com.example.bookshop01.order.vo.OrderVO" alias="orderVO" />
+    <typeAlias type="com.example.bookshop01.mypage.vo.MyPageVO" alias="mypageVO" />
     
   </typeAliases>
 </configuration>

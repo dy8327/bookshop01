@@ -3,7 +3,6 @@ package com.example.bookshop01.main;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,8 +20,11 @@ import jakarta.servlet.http.HttpSession;
 @Controller("mainController")
 @EnableAspectJAutoProxy
 public class MainController extends BaseController {
-	@Autowired
-	private GoodsService goodsService;
+	private final GoodsService goodsService;
+
+	MainController(GoodsService goodsService) {
+		this.goodsService = goodsService;
+	}
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
     public String home() {

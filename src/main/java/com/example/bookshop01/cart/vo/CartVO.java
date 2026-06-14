@@ -1,8 +1,5 @@
 package com.example.bookshop01.cart.vo;
 
-import org.springframework.stereotype.Component;
-
-@Component("cartVO")
 public class CartVO {
 	private int cart_id;
 	private int goods_id;

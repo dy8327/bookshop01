@@ -2,7 +2,6 @@ package com.example.bookshop01.cart.controller;
 
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,10 +21,11 @@ import jakarta.servlet.http.HttpSession;
 @Controller("cartController")
 @RequestMapping(value="/cart")
 public class CartControllerImpl extends BaseController implements CartController{
-	@Autowired
-	private CartService cartService;
-	@Autowired
-	private MemberVO memberVO;
+	private final CartService cartService;
+
+	CartControllerImpl(CartService cartService) {
+		this.cartService = cartService;
+	}
 	
 	@RequestMapping(value="/myCartList.do" ,method = RequestMethod.GET)
 	public ModelAndView myCartMain(HttpServletRequest request, HttpServletResponse response)  throws Exception {
@@ -45,7 +45,7 @@ public class CartControllerImpl extends BaseController implements CartController
 	public  @ResponseBody String addGoodsInCart(@RequestParam("goods_id") int goods_id,
 			                    HttpServletRequest request, HttpServletResponse response)  throws Exception{
 		HttpSession session=request.getSession();
-		memberVO=(MemberVO)session.getAttribute("memberInfo");
+		MemberVO memberVO=(MemberVO)session.getAttribute("memberInfo");
 		String member_id=memberVO.getMember_id();
 		CartVO cartVO = new CartVO();
 		
@@ -67,7 +67,7 @@ public class CartControllerImpl extends BaseController implements CartController
 			                                   @RequestParam("cart_goods_qty") int cart_goods_qty,
 			                                    HttpServletRequest request, HttpServletResponse response)  throws Exception{
 		HttpSession session=request.getSession();
-		memberVO=(MemberVO)session.getAttribute("memberInfo");
+		MemberVO memberVO=(MemberVO)session.getAttribute("memberInfo");
 		String member_id=memberVO.getMember_id();
 		CartVO cartVO = new CartVO();
 		cartVO.setGoods_id(goods_id);

@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,11 +26,11 @@ import jakarta.servlet.http.HttpSession;
 @Controller("myPageController")
 @RequestMapping(value="/mypage")
 public class MyPageControllerImpl extends BaseController  implements MyPageController{
-	@Autowired
-	private MyPageService myPageService;
-	
-	@Autowired
-	private MemberVO memberVO;
+	private final MyPageService myPageService;
+
+	MyPageControllerImpl(MyPageService myPageService) {
+		this.myPageService = myPageService;
+	}
 	
 	@Override
 	@RequestMapping(value="/myPageMain.do" ,method = RequestMethod.GET)
@@ -42,7 +42,7 @@ public class MyPageControllerImpl extends BaseController  implements MyPageContr
 		
 		String viewName=(String)request.getAttribute("viewName");
 		ModelAndView mav = new ModelAndView(viewName);
-		memberVO=(MemberVO)session.getAttribute("memberInfo");
+		MemberVO memberVO=(MemberVO)session.getAttribute("memberInfo");
 		String member_id=memberVO.getMember_id();
 		
 		List<OrderVO> myOrderList=myPageService.listMyOrderGoods(member_id);
@@ -74,7 +74,7 @@ public class MyPageControllerImpl extends BaseController  implements MyPageContr
 		String viewName=(String)request.getAttribute("viewName");
 		ModelAndView mav = new ModelAndView(viewName);
 		HttpSession session=request.getSession();
-		memberVO=(MemberVO)session.getAttribute("memberInfo");
+		MemberVO memberVO=(MemberVO)session.getAttribute("memberInfo");
 		String  member_id=memberVO.getMember_id();
 		
 		String fixedSearchPeriod = dateMap.get("fixedSearchPeriod");
@@ -127,7 +127,7 @@ public class MyPageControllerImpl extends BaseController  implements MyPageContr
 		Map<String,String> memberMap=new HashMap<String,String>();
 		String val[]=null;
 		HttpSession session=request.getSession();
-		memberVO=(MemberVO)session.getAttribute("memberInfo");
+		MemberVO memberVO=(MemberVO)session.getAttribute("memberInfo");
 		String  member_id=memberVO.getMember_id();
 		if(attribute.equals("member_birth")){
 			val=value.split(",");

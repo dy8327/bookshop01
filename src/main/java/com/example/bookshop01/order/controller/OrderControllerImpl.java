@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,10 +24,11 @@ import jakarta.servlet.http.HttpSession;
 @Controller("orderController")
 @RequestMapping(value="/order")
 public class OrderControllerImpl extends BaseController implements OrderController {
-	@Autowired
-	private OrderService orderService;
-	@Autowired
-	private OrderVO orderVO;
+	private final OrderService orderService;
+
+	OrderControllerImpl(OrderService orderService) {
+		this.orderService = orderService;
+	}
 	
 	@RequestMapping(value="/orderEachGoods.do" ,method = RequestMethod.POST)
 	public ModelAndView orderEachGoods(@ModelAttribute("orderVO") OrderVO _orderVO,
@@ -40,6 +40,7 @@ public class OrderControllerImpl extends BaseController implements OrderControll
 		
 		Boolean isLogOn=(Boolean)session.getAttribute("isLogOn");
 		String action=(String)session.getAttribute("action");
+		OrderVO orderVO;
 		//�α��� ���� üũ
 		//������ �α��� ������ ���� �ֹ����� ����
 		//�α׾ƿ� ������ ��� �α��� ȭ������ �̵�

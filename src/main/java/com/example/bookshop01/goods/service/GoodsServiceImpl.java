@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -20,7 +19,6 @@ public class GoodsServiceImpl implements GoodsService{
 	
 	private final GoodsDAO goodsDAO;
 	
-	@Autowired
 	public GoodsServiceImpl(@Qualifier("goodsDAO") GoodsDAO goodsDAO) {
 		this.goodsDAO = goodsDAO;
 	}

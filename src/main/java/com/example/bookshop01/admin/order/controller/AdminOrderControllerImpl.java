@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,8 +24,11 @@ import jakarta.servlet.http.HttpServletResponse;
 @Controller("adminOrderController")
 @RequestMapping(value="/admin/order")
 public class AdminOrderControllerImpl extends BaseController  implements AdminOrderController{
-	@Autowired
-	private AdminOrderService adminOrderService;
+	private final AdminOrderService adminOrderService;
+
+	AdminOrderControllerImpl(AdminOrderService adminOrderService) {
+		this.adminOrderService = adminOrderService;
+	}
 	
 	@Override
 	@RequestMapping(value="/adminOrderMain.do" ,method={RequestMethod.GET, RequestMethod.POST})

@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,8 +31,11 @@ import jakarta.servlet.http.HttpSession;
 @RequestMapping(value="/admin/goods")
 public class AdminGoodsControllerImpl extends BaseController  implements AdminGoodsController{
 	private static final String CURR_IMAGE_REPO_PATH = "C:\\shopping\\file_repo";
-	@Autowired
-	private AdminGoodsService adminGoodsService;
+	private final AdminGoodsService adminGoodsService;
+
+	AdminGoodsControllerImpl(AdminGoodsService adminGoodsService) {
+		this.adminGoodsService = adminGoodsService;
+	}
 	
 	@RequestMapping(value="/adminGoodsMain.do" ,method={RequestMethod.POST,RequestMethod.GET})
 	public ModelAndView adminGoodsMain(@RequestParam Map<String, String> dateMap,

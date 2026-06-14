@@ -2,7 +2,6 @@ package com.example.bookshop01.member.controller;
 
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,17 +23,18 @@ import jakarta.servlet.http.HttpSession;
 @Controller("memberController")
 @RequestMapping(value="/member")
 public class MemberControllerImpl extends BaseController implements MemberController{
-	@Autowired
-	private MemberService memberService;
-	@Autowired
-	private MemberVO memberVO;
+	private final MemberService memberService;
+
+	MemberControllerImpl(MemberService memberService) {
+		this.memberService = memberService;
+	}
 	
 	@Override
 	@RequestMapping(value="/login.do" ,method = RequestMethod.POST)
 	public ModelAndView login(@RequestParam Map<String, String> loginMap,
-			                  HttpServletRequest request, HttpServletResponse response) throws Exception {
+	                  HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView mav = new ModelAndView();
-		 memberVO=memberService.login(loginMap);
+		MemberVO memberVO=memberService.login(loginMap);
 		if(memberVO!= null && memberVO.getMember_id()!=null){
 			HttpSession session=request.getSession();
 			session=request.getSession();

@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,8 +21,11 @@ import jakarta.servlet.http.HttpServletResponse;
 @Controller("adminMemberController")
 @RequestMapping(value="/admin/member")
 public class AdminMemberControllerImpl extends BaseController  implements AdminMemberController{
-	@Autowired
-	private AdminMemberService adminMemberService;
+	private final AdminMemberService adminMemberService;
+
+	AdminMemberControllerImpl(AdminMemberService adminMemberService) {
+		this.adminMemberService = adminMemberService;
+	}
 	
 	@RequestMapping(value="/adminMemberMain.do" ,method={RequestMethod.POST,RequestMethod.GET})
 	public ModelAndView adminGoodsMain(@RequestParam Map<String, String> dateMap,

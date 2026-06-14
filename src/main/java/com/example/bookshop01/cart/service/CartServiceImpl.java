@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -20,7 +19,6 @@ public class CartServiceImpl  implements CartService{
 	
 	private final CartDAO cartDAO;
 	
-	@Autowired
 	public CartServiceImpl(@Qualifier("cartDAO") CartDAO cartDAO) {
 		this.cartDAO = cartDAO;
 	}

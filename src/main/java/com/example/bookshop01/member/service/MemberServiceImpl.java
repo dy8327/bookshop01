@@ -2,7 +2,6 @@ package com.example.bookshop01.member.service;
 
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -17,7 +16,6 @@ public class MemberServiceImpl implements MemberService {
 	
 	private final MemberDAO memberDAO;
 	
-	@Autowired
 	public MemberServiceImpl(@Qualifier("memberDAO") MemberDAO memberDAO) {
 		this.memberDAO = memberDAO;
 	}

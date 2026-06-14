@@ -2,7 +2,6 @@ package com.example.bookshop01.order.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -18,7 +17,6 @@ public class OrderServiceImpl implements OrderService {
 	
 	private final OrderDAO orderDAO;
 	
-	@Autowired
 	public OrderServiceImpl(@Qualifier("orderDAO") OrderDAO orderDAO) {
 		this.orderDAO = orderDAO;
 	}
